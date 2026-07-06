@@ -80,3 +80,14 @@ See [CONTRIBUTING.md](CONTRIBUTING.md).
 ## License
 
 Apache 2.0
+
+<!-- BEGIN gh-mutual-linking -->
+
+---
+
+### Related projects
+
+- [**go-filemanager**](https://github.com/didvc/go-filemanager) — 🗂️ Modern web-based file manager built with Go. Features file preview, UTF-8 support, responsive design, and secure file operations.
+- [**html-bio-generator**](https://github.com/didvc/html-bio-generator) — A modern, intuitive tool for creating beautiful HTML bio pages with ease. Built with Next.js, TypeScript, and Tailwind CSS. Perfect for developers, freelancers, and content creators.
+- [**image-gallery-app**](https://github.com/didvc/image-gallery-app) — 🖼️ Modern minimalist image gallery built with Express.js and Vue.js - featuring drag & drop upload, responsive design, and clean aesthetics
+<!-- END gh-mutual-linking -->
