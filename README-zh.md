@@ -1,31 +1,31 @@
-English · [日本語](README-ja.md) · [繁體中文](README-zh-TW.md) · [简体中文](README-zh.md) · [Deutsch](README-de.md) · [Español](README-es.md)
+[English](README.md) · [日本語](README-ja.md) · [繁體中文](README-zh-TW.md) · 简体中文 · [Deutsch](README-de.md) · [Español](README-es.md)
 
 # astro-html-editor
 
 [![npm](https://img.shields.io/npm/v/astro-html-editor)](https://www.npmjs.com/package/astro-html-editor) [![npm downloads](https://img.shields.io/npm/dm/astro-html-editor)](https://www.npmjs.com/package/astro-html-editor) [![Docs](https://img.shields.io/badge/docs-didvc.github.io%2Fastro--html--editor-blue)](https://didvc.github.io/astro-html-editor/) [![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](LICENSE)
 
-[Full documentation →](https://didvc.github.io/astro-html-editor/)
+[完整文档 →](https://didvc.github.io/astro-html-editor/)
 
-A self-hosted HTML editor with live preview. Paste or write HTML on the left, see the result on the right. Files are saved to the server filesystem immediately — no localStorage, no manual download step.
+带实时预览的自托管 HTML 编辑器。在左侧粘贴或编写 HTML，右侧即可看到结果。文件会立即保存到服务器的文件系统——不使用 localStorage，也无需手动下载。
 
-Built with Astro SSR and plain JavaScript. No React, Vue, or Svelte.
+基于 Astro SSR 和纯 JavaScript 构建，不使用 React、Vue 或 Svelte。
 
-![screenshot](screenshot.png)
+![截图](screenshot.png)
 
-## Install
+## 安装
 
 ```bash
-# Run without installing
+# 无需安装直接运行
 npx astro-html-editor
 
-# Or install globally
+# 或全局安装
 npm install -g astro-html-editor
 astro-html-editor
 ```
 
-Opens at `http://localhost:4321`. Files are saved to `./data/` in the current directory.
+会在 `http://localhost:4321` 打开。文件保存在当前目录的 `./data/` 中。
 
-## From source
+## 从源码构建
 
 ```bash
 git clone https://github.com/yuis-ice/astro-html-editor
@@ -35,51 +35,51 @@ npm run build
 npm start
 ```
 
-For development (hot reload):
+开发模式（热重载）：
 
 ```bash
 npm run dev
 ```
 
-## Features
+## 功能
 
-- Split-pane editor (textarea) + live preview (iframe srcdoc)
-- Server-side file persistence via `node:fs` — survives browser crashes
-- Immediate sync on paste, debounced sync on keystroke (800ms)
-- Atomic writes (`tmp` → `fs.rename`) to prevent partial saves
-- File management: New, Save As, Rename, Clone, Load, Copy, Download, Reset, Open in new window
-- Files organized under `data/YYYY-MM/` with URL-based routing (`/file/YYYY-MM/name`)
-- Tab key inserts 2 spaces; Ctrl+S triggers immediate save
-- Line-number gutter synced to scroll position
-- Dark theme (Tokyo Night palette)
+- 分栏编辑器（textarea）+ 实时预览（iframe srcdoc）
+- 通过 `node:fs` 在服务器端持久化文件——浏览器崩溃也不会丢失
+- 粘贴时立即同步，输入时防抖同步（800ms）
+- 原子写入（`tmp` → `fs.rename`），避免只保存了一半
+- 文件管理：新建、另存为、重命名、克隆、加载、复制、下载、重置、在新窗口中打开
+- 文件按 `data/YYYY-MM/` 组织，并按 URL 路由（`/file/YYYY-MM/name`）
+- Tab 键插入 2 个空格；Ctrl+S 立即保存
+- 与滚动位置同步的行号栏
+- 深色主题（Tokyo Night 配色）
 
-## Self-Hosting
+## 自托管
 
-Files are written to `./data/YYYY-MM/` relative to the working directory. Mount a persistent volume at `./data/` if running in Docker.
+文件会写入相对于工作目录的 `./data/YYYY-MM/`。如果在 Docker 中运行，请在 `./data/` 挂载持久化卷。
 
-The `/api/*` endpoints have no authentication. Do not expose the server to the public internet without adding your own access control (reverse proxy, firewall rule, etc.).
+`/api/*` 端点没有任何身份验证。在没有添加自己的访问控制（反向代理、防火墙规则等）之前，请勿将服务器暴露到公网。
 
-Set `PORT` to change the port:
+设置 `PORT` 以更改端口：
 
 ```bash
 PORT=8080 astro-html-editor
 ```
 
-## API Endpoints
+## API 端点
 
-| Method | Path | Description |
+| 方法 | 路径 | 说明 |
 |--------|------|-------------|
-| `POST` | `/api/sync` | Write file to disk |
-| `GET` | `/api/files` | List saved files with byte sizes |
-| `POST` | `/api/new` | Create file with default template, return slug |
-| `POST` | `/api/rename` | Rename file on server |
-| `POST` | `/api/clone` | Duplicate file, return new slug |
+| `POST` | `/api/sync` | 将文件写入磁盘 |
+| `GET` | `/api/files` | 列出已保存的文件及其字节大小 |
+| `POST` | `/api/new` | 用默认模板创建文件，并返回 slug |
+| `POST` | `/api/rename` | 在服务器上重命名文件 |
+| `POST` | `/api/clone` | 复制文件，并返回新的 slug |
 
-## Contributing
+## 贡献
 
-See [CONTRIBUTING.md](CONTRIBUTING.md).
+请参阅 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
-## License
+## 许可证
 
 Apache 2.0
 

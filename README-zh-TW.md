@@ -1,31 +1,31 @@
-English · [日本語](README-ja.md) · [繁體中文](README-zh-TW.md) · [简体中文](README-zh.md) · [Deutsch](README-de.md) · [Español](README-es.md)
+[English](README.md) · [日本語](README-ja.md) · 繁體中文 · [简体中文](README-zh.md) · [Deutsch](README-de.md) · [Español](README-es.md)
 
 # astro-html-editor
 
 [![npm](https://img.shields.io/npm/v/astro-html-editor)](https://www.npmjs.com/package/astro-html-editor) [![npm downloads](https://img.shields.io/npm/dm/astro-html-editor)](https://www.npmjs.com/package/astro-html-editor) [![Docs](https://img.shields.io/badge/docs-didvc.github.io%2Fastro--html--editor-blue)](https://didvc.github.io/astro-html-editor/) [![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](LICENSE)
 
-[Full documentation →](https://didvc.github.io/astro-html-editor/)
+[完整文件 →](https://didvc.github.io/astro-html-editor/)
 
-A self-hosted HTML editor with live preview. Paste or write HTML on the left, see the result on the right. Files are saved to the server filesystem immediately — no localStorage, no manual download step.
+具備即時預覽的自架 HTML 編輯器。在左側貼上或撰寫 HTML，右側即可看到結果。檔案會立即儲存到伺服器的檔案系統——不使用 localStorage，也不需要手動下載。
 
-Built with Astro SSR and plain JavaScript. No React, Vue, or Svelte.
+以 Astro SSR 與純 JavaScript 打造，不使用 React、Vue 或 Svelte。
 
-![screenshot](screenshot.png)
+![螢幕截圖](screenshot.png)
 
-## Install
+## 安裝
 
 ```bash
-# Run without installing
+# 不安裝直接執行
 npx astro-html-editor
 
-# Or install globally
+# 或全域安裝
 npm install -g astro-html-editor
 astro-html-editor
 ```
 
-Opens at `http://localhost:4321`. Files are saved to `./data/` in the current directory.
+會在 `http://localhost:4321` 開啟。檔案會儲存在目前目錄的 `./data/` 中。
 
-## From source
+## 從原始碼建置
 
 ```bash
 git clone https://github.com/yuis-ice/astro-html-editor
@@ -35,51 +35,51 @@ npm run build
 npm start
 ```
 
-For development (hot reload):
+開發模式（熱重載）：
 
 ```bash
 npm run dev
 ```
 
-## Features
+## 功能
 
-- Split-pane editor (textarea) + live preview (iframe srcdoc)
-- Server-side file persistence via `node:fs` — survives browser crashes
-- Immediate sync on paste, debounced sync on keystroke (800ms)
-- Atomic writes (`tmp` → `fs.rename`) to prevent partial saves
-- File management: New, Save As, Rename, Clone, Load, Copy, Download, Reset, Open in new window
-- Files organized under `data/YYYY-MM/` with URL-based routing (`/file/YYYY-MM/name`)
-- Tab key inserts 2 spaces; Ctrl+S triggers immediate save
-- Line-number gutter synced to scroll position
-- Dark theme (Tokyo Night palette)
+- 分割窗格編輯器（textarea）＋即時預覽（iframe srcdoc）
+- 透過 `node:fs` 在伺服器端保存檔案——瀏覽器當機也不會遺失
+- 貼上時立即同步，輸入時以防抖方式同步（800ms）
+- 原子寫入（`tmp` → `fs.rename`），避免只儲存到一半
+- 檔案管理：新增、另存新檔、重新命名、複製檔案、載入、複製內容、下載、重設、在新視窗開啟
+- 檔案整理在 `data/YYYY-MM/` 之下，並以 URL 路由（`/file/YYYY-MM/name`）
+- Tab 鍵插入 2 個空格；Ctrl+S 立即儲存
+- 與捲動位置同步的行號欄
+- 深色主題（Tokyo Night 配色）
 
-## Self-Hosting
+## 自架
 
-Files are written to `./data/YYYY-MM/` relative to the working directory. Mount a persistent volume at `./data/` if running in Docker.
+檔案會寫入相對於工作目錄的 `./data/YYYY-MM/`。若在 Docker 中執行，請在 `./data/` 掛載持久化磁碟區。
 
-The `/api/*` endpoints have no authentication. Do not expose the server to the public internet without adding your own access control (reverse proxy, firewall rule, etc.).
+`/api/*` 端點沒有任何驗證。在未加上自己的存取控制（反向代理、防火牆規則等）之前，請勿將伺服器公開到網際網路。
 
-Set `PORT` to change the port:
+設定 `PORT` 以變更連接埠：
 
 ```bash
 PORT=8080 astro-html-editor
 ```
 
-## API Endpoints
+## API 端點
 
-| Method | Path | Description |
+| 方法 | 路徑 | 說明 |
 |--------|------|-------------|
-| `POST` | `/api/sync` | Write file to disk |
-| `GET` | `/api/files` | List saved files with byte sizes |
-| `POST` | `/api/new` | Create file with default template, return slug |
-| `POST` | `/api/rename` | Rename file on server |
-| `POST` | `/api/clone` | Duplicate file, return new slug |
+| `POST` | `/api/sync` | 將檔案寫入磁碟 |
+| `GET` | `/api/files` | 列出已儲存的檔案及其位元組大小 |
+| `POST` | `/api/new` | 以預設範本建立檔案，並回傳 slug |
+| `POST` | `/api/rename` | 在伺服器上重新命名檔案 |
+| `POST` | `/api/clone` | 複製檔案，並回傳新的 slug |
 
-## Contributing
+## 貢獻
 
-See [CONTRIBUTING.md](CONTRIBUTING.md).
+請參閱 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
-## License
+## 授權
 
 Apache 2.0
 
