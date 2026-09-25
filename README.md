@@ -28,7 +28,7 @@ Opens at `http://localhost:4321`. Files are saved to `./data/` in the current di
 ## From source
 
 ```bash
-git clone https://github.com/yuis-ice/astro-html-editor
+git clone https://github.com/didvc/astro-html-editor
 cd astro-html-editor
 npm install
 npm run build

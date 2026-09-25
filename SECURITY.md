@@ -3,7 +3,7 @@
 ## Reporting a Vulnerability
 
 To report a security issue, use GitHub's private vulnerability reporting:
-https://github.com/yuis-ice/astro-html-editor/security/advisories/new
+https://github.com/didvc/astro-html-editor/security/advisories/new
 
 Or open an issue with the `security` label if the issue is not sensitive.
 

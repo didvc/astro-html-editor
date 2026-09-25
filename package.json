@@ -36,14 +36,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yuis-ice/astro-html-editor.git"
+    "url": "git+https://github.com/didvc/astro-html-editor.git"
   },
   "homepage": "https://didvc.github.io/astro-html-editor/",
   "bugs": {
-    "url": "https://github.com/yuis-ice/astro-html-editor/issues"
+    "url": "https://github.com/didvc/astro-html-editor/issues"
   },
   "license": "Apache-2.0",
-  "author": "yuis-ice",
+  "author": "didvc",
   "engines": {
     "node": ">=18"
   },

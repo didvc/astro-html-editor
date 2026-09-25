@@ -11,7 +11,7 @@ hero:
       link: /guide/getting-started
     - theme: alt
       text: View on GitHub
-      link: https://github.com/yuis-ice/astro-html-editor
+      link: https://github.com/didvc/astro-html-editor
     - theme: alt
       text: npm
       link: https://www.npmjs.com/package/astro-html-editor

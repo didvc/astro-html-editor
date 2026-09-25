@@ -54,17 +54,17 @@ export default defineConfig({
     },
 
     editLink: {
-      pattern: 'https://github.com/yuis-ice/astro-html-editor/edit/main/docs/:path',
+      pattern: 'https://github.com/didvc/astro-html-editor/edit/main/docs/:path',
       text: 'Edit this page on GitHub',
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/yuis-ice/astro-html-editor' },
+      { icon: 'github', link: 'https://github.com/didvc/astro-html-editor' },
     ],
 
     footer: {
       message: 'Released under the Apache 2.0 License.',
-      copyright: 'Copyright © 2026 yuis-ice',
+      copyright: 'Copyright © 2026 didvc',
     },
   },
 })
